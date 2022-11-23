@@ -18,6 +18,7 @@ public class CatDemoDriver{
         //myCat.name = "Mustrum";     // nope name is private
         //myCat.setName("Mustrum");
         myCat.setName("Rincewind");
+        myCat.setAge(12);
         
         //or 
         
