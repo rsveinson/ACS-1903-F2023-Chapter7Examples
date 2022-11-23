@@ -68,5 +68,5 @@ public class CatDemo{
         // System.out.println(me);
         // System.out.println(you);
         return this.name.equals(oc.name);
-    }
+    }// end equals
 }
