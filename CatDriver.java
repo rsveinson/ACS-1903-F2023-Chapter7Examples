@@ -17,6 +17,7 @@ public class CatDriver{
         //myCat.name = ("Mustrum");    // nope name is private
         myCat.setName("Mustrum");
         myCat.setAge(3);
+        //myCat.getNextID();
         
         // hmm what's happening here
         System.out.println(myCat);
