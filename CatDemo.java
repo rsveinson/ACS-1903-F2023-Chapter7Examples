@@ -46,4 +46,12 @@ public class CatDemo{
         st = this.getName() + ", " + this.getAge();
         return st;
     }// end toString
+    
+    public boolean equals(CatDemo oc){
+        // String me = this.name;
+        // String you = oc.getName();
+        // System.out.println(me);
+        // System.out.println(you);
+        return this.name.equals(oc.name);
+    }
 }

@@ -103,6 +103,7 @@ public class Student {
     }
 
     public boolean equals(Student s){
+        System.out.println("equals");
         return id == s.id;
     }
 }

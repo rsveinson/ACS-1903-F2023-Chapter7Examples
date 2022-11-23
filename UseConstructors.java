@@ -17,5 +17,7 @@ public class UseConstructors
         // display the students
         System.out.println(jill);
         System.out.println(sam);
+        
+        System.out.println(sam.equals(jill));
     }
 }
