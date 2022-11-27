@@ -51,7 +51,7 @@ public class Cat{
     
     // other methods
     public boolean equals(Cat c){
-        return this.name.equals(c.getName());
+        return this.name.equals(c.name);
     }// end equals
     private int getNextID(){
         return nextID++;

@@ -26,6 +26,9 @@ public class CatDriver{
         // see the sate of an object
         System.out.println(myCat.getName() + ": " + myCat.getAge());
         
+        // see how .equals works for Cat
+        
+        
         System.out.println("end of program");
     }
 }

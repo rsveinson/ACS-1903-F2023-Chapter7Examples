@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+
 /** 
  * ACS-1903 Assignment X Question Y
  * @author 
@@ -7,17 +9,50 @@ import java.util.Scanner;
 public class CatDemoDriver{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        
+        ArrayList<CatDemo> cats = new ArrayList<>();
+        ArrayList<Owner> owners = new ArrayList<>();
+        
+        cats.add(new CatDemo(3, "Mittens"));
+        cats.add(new CatDemo(5, "Fido"));
+        
+        CatDemo newCat = new CatDemo(4, "Stibbins");
+        cats.add(newCat);
+
         
         CatDemo myCat = new CatDemo();
         CatDemo otherCat = new CatDemo(2, "Rincewind");
+        cats.add(otherCat);
+        
+        // print using toString()
+        System.out.println("The list of cats:");
+        for(CatDemo c : cats){
+            // default method call is to toString()
+            System.out.println(c);
+        }// end for cats
+        System.out.println("End of the list of cats:\n");
+
+        // call some methods
+        System.out.println("Accessing fields using getters.");
+        String st = cats.get(0).getName();
+        System.out.println(st);
+        cats.get(2).setAge(5);
+        System.out.println(cats.get(1).getID());
+        System.out.println("Done accessing fields using getters.\n");
+        
+        
+        /* original examples of Cat class 
+         * usages
+         */
         
         System.out.println(myCat);
         System.out.println(otherCat);
         
         // using setters
         //myCat.name = "Mustrum";     // nope name is private
-        //myCat.setName("Mustrum");
-        myCat.setName("Rincewind");
+        myCat.setName("Mustrum");
+        //myCat.setName("Rincewind");
         myCat.setAge(12);
         
         //or 
@@ -40,6 +75,16 @@ public class CatDemoDriver{
             System.out.println("different cats");
         }// end different cats
         
+        // do some associations
+        
+        
+        
         System.out.println("end of program");
+    }
+    
+    // static method to set the association between cat and owner
+    public static void adoptACat(Owner owner, CatDemo cat){
+        owner.addCat(cat);
+        cat.setOwner(owner);
     }
 }
