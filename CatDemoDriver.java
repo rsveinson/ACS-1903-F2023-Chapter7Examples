@@ -87,7 +87,7 @@ public class CatDemoDriver{
         System.out.println(owner2);
         owner2.setName("Maladict");
         
-        // i nave myCat, and otherCat, and newCat from previous code.
+        // i have myCat, and otherCat, and newCat from previous code.
         System.out.println(owner2);  // note that Mal has 0 cats
         //System.out.println(myCat);      // note that owner is null
         
