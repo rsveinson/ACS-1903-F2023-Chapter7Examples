@@ -51,8 +51,20 @@ public class Cat{
     
     // other methods
     public boolean equals(Cat c){
+        // using the String implementation of
+        // .equals
         return this.name.equals(c.name);
+        
+        // we could
+        //boolean equal = this.name.equals(c.name) && this.age == c.age;
+        //return equal;
+        
+        // we could also set equal if their id are equal
+        //return this.id == c.id;
+        // direct access to c.id is possible because
+        // the object is in scope in this method
     }// end equals
+    
     private int getNextID(){
         return nextID++;
     }// end get next id
