@@ -76,10 +76,28 @@ public class CatDemoDriver{
         }// end different cats
         
         // do some associations
+        // make an owner or two
+        
+        System.out.println("\n------------ Some associations ---------------");
+        Owner owner1 = new Owner("Maurice");
+        Owner owner2 = new Owner();
+        Owner owner3 = new Owner("Angua");
+        
+        System.out.println(owner1);
+        System.out.println(owner2);
+        owner2.setName("Maladict");
+        
+        // i nave myCat, and otherCat, and newCat from previous code.
+        System.out.println(owner2);  // note that Mal has 0 cats
+        //System.out.println(myCat);      // note that owner is null
+        
+        // set the asociation between owner2 and myCat
+        adoptACat(owner2, myCat);
+        System.out.println(owner2);  // note that Mal has 1 Cat
+        System.out.println(myCat);      // note owner is now Maladict
         
         
-        
-        System.out.println("end of program");
+        System.out.println("\nend of program");
     }
     
     // static method to set the association between cat and owner
