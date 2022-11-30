@@ -20,7 +20,7 @@ public class VarArgCatExample{
         // each cat has an empty owner field at this point
         // and the emmperors cats array list is of size 0
         // they've all been adopted by the emperor so we can set all of their 
-        // associations at once using vararg (variable arguments0
+        // associations at once using vararg (variable arguments)
 
         adoptACat(emperor, myCat, otherCat, newCat, jediCat);
         
