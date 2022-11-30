@@ -58,6 +58,11 @@ public class Owner{
     
     
     // others
+    // get an individual cat/
+    public Cat getACat(int index){
+        return myCats.get(index);
+    }// end a specific cat from the list
+    
     @Override
     public String toString(){
         String st = name+"'s Cats:\n";
