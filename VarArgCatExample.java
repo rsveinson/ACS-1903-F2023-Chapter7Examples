@@ -31,10 +31,10 @@ public class VarArgCatExample{
     }
 
     // static method to set the association between cat and owner
-    public static void adoptACat(Owner owner, Cat... c){
+    public static void adoptACat(Owner owner, Cat ... c){
         for(Cat cat : c){
             owner.addCat(cat);
             cat.setOwner(owner);
-        }
-    }
+        }// end for
+    }// end adoptACat
 }
