@@ -12,7 +12,7 @@ public class Owner{
     private String name;
     
     // for associating with a bunch of cats
-    ArrayList<CatDemo> myCats;
+    ArrayList<Cat> myCats;
     
     // constructors
     public Owner(){
@@ -32,30 +32,40 @@ public class Owner{
         return name;
     }// end get name
     
-    public ArrayList<CatDemo> getCats(){
+    
+    public ArrayList<Cat> getCats(){
         return myCats;
     }// end get cats
+    
     
     // setters
     public void setName(String name){
         this.name = name;
     }// end set name
     
+    
     // here we set the entire list of cats
-    public void setCats(ArrayList<CatDemo> l){
+    public void setCats(ArrayList<Cat> l){
         myCats = l;
     }// end set Cats
     
+    
     // perhaps a more useful method to add a single 
     // cat to the existing list of cats
-    public void addCat(CatDemo cat){
+    public void addCat(Cat cat){
         myCats.add(cat);
     }// end addCat
+    
     
     // others
     @Override
     public String toString(){
-        return name + ": " + myCats.size() + " cats";
+        String st = name+"'s Cats:\n";
+        
+        for(Cat c : myCats){
+            st += c.getName() + "\n";
+        }//end for
+        return st;
     }// end to string
     
     

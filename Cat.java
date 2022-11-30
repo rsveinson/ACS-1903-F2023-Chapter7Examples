@@ -7,12 +7,16 @@ import java.util.Scanner;
 
 public class Cat{
     // static/class variables
-    private static int nextID = 1000;
+    private static int nextID = 1000;   // shared by all instances of Cat
+    private static final int PEOPLEYEARS = 7;  // human year factor
     
     // instance variables a.k.a. fields
     private int age;
     private String name;
-    private int id;
+    private int id;             // the unique id is an instance varialbe
+    
+    //the association field
+    Owner owner;                // A Cat has an owner
     
     // constructors
     public Cat(){
@@ -36,11 +40,16 @@ public class Cat{
         return this.name;
     }// end get name
     
-    public int getId(){
+    public int getID(){
         return this.id;
     }// end get id
     
+    public Owner getOwner(){
+        return this.owner;
+    }// end get owner
+    
     // setters
+    // no setter for id, we don't want to allow any chnages once the unique id has been assigned
     public void setAge(int a){
         this.age = a;
     }// end set age
@@ -49,7 +58,20 @@ public class Cat{
         this.name = n;
     }//end set name
     
+    
+    public void setOwner(Owner owner){
+        this.owner = owner;
+    }// end set owner
+    
     // other methods
+    
+    
+    // get the cat's age in human years.
+    public int getHumanYears(){
+        return age * PEOPLEYEARS;
+    }// end get people years
+    
+    
     public boolean equals(Cat c){
         // using the String implementation of
         // .equals
@@ -69,12 +91,13 @@ public class Cat{
         return nextID++;
     }// end get next id
     
+    
     @Override
     public String toString(){
        String st;
        //st = this.getName() + ", " + this.getAge();
-       st = name + ", " + id + ", " + age;
+       st = name + ", " + id + ", " + age + ", " + owner.getName();
        return st;
-    }//
+    }//end toString
 
 }// end Car

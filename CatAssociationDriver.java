@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author 
 */
 
-public class CatDemoDriver{
+public class CatAssociationDriver{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -25,55 +25,12 @@ public class CatDemoDriver{
         Cat otherCat = new Cat(2, "Rincewind");
         cats.add(otherCat);
         
-        // print using toString()
-        System.out.println("The list of cats:");
-        for(Cat c : cats){
-            // default method call is to toString()
-            System.out.println(c.getName());
-        }// end for cats
-        System.out.println("End of the list of cats:\n");
-
-        // call some methods
-        System.out.println("Accessing fields using getters.");
-        String st = cats.get(0).getName();
-        System.out.println(st);
-        cats.get(2).setAge(5);
-        System.out.println(cats.get(1).getID());
-        System.out.println("Done accessing fields using getters.\n");
         
-        
-        /* original examples of Cat class 
-         * usages
-         */
-        
-        //System.out.println(myCat);
-        //System.out.println(otherCat);
-        
-        // using setters
-        //myCat.name = "Mustrum";     // nope name is private
         myCat.setName("Mustrum");
         //myCat.setName("Rincewind");
         myCat.setAge(12);
         
-        //or 
         
-        // System.out.println("enter the age and name of your cat.");
-        // int age = scanner.nextInt();
-        // String name = scanner.next();
-        // myCat.setAge(age);
-        // myCat.setName(name);
-        //System.out.println(myCat);
-        
-        boolean sameCat;
-        
-        sameCat = myCat.equals(otherCat);
-        System.out.println(sameCat);
-        if(sameCat){
-            System.out.println("my cat is your cat");
-        }// end cat's are the same
-        else{
-            System.out.println("different cats");
-        }// end different cats
         
         // do some associations
         // make an owner or two
@@ -88,13 +45,21 @@ public class CatDemoDriver{
         owner2.setName("Maladict");
         
         // i have myCat, and otherCat, and newCat from previous code.
-        System.out.println(owner2);  // note that Mal has 0 cats
+        System.out.println(owner2);  
         //System.out.println(myCat);      // note that owner is null
         
         // set the asociation between owner2 and myCat
         adoptACat(owner2, myCat);
+        System.out.println("Here's owner2:");
         System.out.println(owner2);  // note that Mal has 1 Cat
+        
+        System.out.println("Now here's myCat");
         System.out.println(myCat);      // note owner is now Maladict
+        System.out.println();
+        
+        
+        System.out.println("Here is the toString() of " + owner2.getName());
+        
         
         for(Cat c : cats){
             adoptACat(owner2, c);
