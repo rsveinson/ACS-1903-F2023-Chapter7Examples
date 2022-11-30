@@ -15,6 +15,8 @@ public class SamDeclaresMathMajor
         
         System.out.println("Math majors = " + math.getMajors());
                         
-        System.out.println(sam.getMajor());
+        System.out.println("Sam's major is: " + sam.getMajor());
+        
+        System.out.println("Sam's major " + sam.getMajor().getCode());
     }
 }

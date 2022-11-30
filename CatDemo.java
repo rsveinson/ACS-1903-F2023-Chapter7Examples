@@ -75,6 +75,10 @@ public class CatDemo{
     }// end toString
     
     public boolean equals(CatDemo oc){
-        return this.name.equals(oc.name);
+        //return this.name.equals(oc.name);
+        //return this.age == oc.age;
+        boolean e;
+        e = this.name.equals(oc.name) && this.age == oc.age;
+        return e;
     }// end equals 
 }
