@@ -12,7 +12,7 @@ public class Owner{
     private String name;
     
     // for associating with a bunch of cats
-    ArrayList<Cat> myCats;
+    private ArrayList<Cat> myCats;
     
     // constructors
     public Owner(){
@@ -66,7 +66,7 @@ public class Owner{
     @Override
     public String toString(){
         String st = name+"'s Cats:\n";
-        
+        //System.out.println(myCats);
         for(Cat c : myCats){
             st += c.getName() + "\n";
         }//end for

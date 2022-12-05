@@ -22,6 +22,7 @@ public class Cat{
     public Cat(){
         age = 0;
         name = "unknow";
+        //owner = new owner();
         id = getNextID();
     }// end no-arg constructor
     

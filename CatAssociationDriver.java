@@ -46,7 +46,7 @@ public class CatAssociationDriver{
         
         // i have myCat, and otherCat, and newCat from previous code.
         System.out.println(owner2);  
-        //System.out.println(myCat);      // note that owner is null
+        System.out.println(myCat);      // note that owner is null
         
         // set the asociation between owner2 and myCat
         adoptACat(owner2, myCat);
