@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CircleClientStart
+public class ArrayListCircleClientStart
 {  // begin class
     public static void main(String args[])
     {  // begin main
