@@ -97,7 +97,8 @@ public class Cat{
     public String toString(){
        String st;
        //st = this.getName() + ", " + this.getAge();
-       st = name + ", " + id + ", " + age + ", " + owner.getName();
+       st = name + ", " + id + ", " + age + "\n";
+       //st = name + ", " + id + ", " + age + ", " + owner.getName();
        return st;
     }//end toString
 
