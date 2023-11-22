@@ -28,7 +28,7 @@ public class Circle {
      * NA
      *********************************************/
     public Circle(){
-        this.id = nextID++;      // assign id and incremnt next id
+        this.id = getNextID();      // assign id and incremnt next id
         this.radius = 0.0;
     } // end default constructor
 
@@ -40,33 +40,32 @@ public class Circle {
      * @param   r the radius of the new circle
      *********************************************/      
     public Circle(double radius){
-        this.id = nextID++;
+        this.id = getNextID();
         this.radius = radius;
     } // end initialized constructor
 
+    // other methods
+    private int getNextID(){
+       return nextID++; 
+    }// end get next id
+    
     // **** getters *****
-    /*****************************************
-     * Description: return unique id of circle
-     * 
-     * Interface:
-     * 
-     * @return  returns circle id number
-     *********************************************/    
+
     public int getId(){
         return this.id;
     } //
 
-    /*****************************************
-     * Description: return unique radius of circle
-     * 
-     * Interface:
-     * 
-     * @return  returns circle radius
-     *********************************************/    
     public double getRadius(){
         return this.radius;
     } // end getRadius
 
+    // **** setters ****
+
+    public void setRadius(double r){
+        this.radius = r;
+    } // end setRadius
+
+    // *** utility methods ***
     /*****************************************
      * Description: return unique area of circle
      * 
@@ -118,17 +117,43 @@ public class Circle {
 
         return summary;       
     } // end toString
+    
+    // public boolean equals(Circle oc){
+        // boolean eq = false;
+        
+        // //eq = this.radius == oc.radius;
+        // eq = this.radius == oc.getRadius();
+        
+        // return eq;
+    // }// end equals
+    
+    public boolean equals(Circle oc){
+         return this.radius == oc.getRadius();
+    }// end equals
 
-    // **** setters ****
-    /*****************************************
-     * Description: set new radius
-     * 
-     * Interface:
-     * 
-     * @param   r new radius of circle
-     *********************************************/    
-    public void setRadius(double r){
-        this.radius = r;
-    } // end setRadius
 
 } // end class
+
+/*****************************************
+ * Description: return unique id of circle
+ * 
+ * Interface:
+ * 
+ * @return  returns circle id number
+ *********************************************/
+
+/*****************************************
+ * Description: return unique radius of circle
+ * 
+ * Interface:
+ * 
+ * @return  returns circle radius
+ *********************************************/
+
+/*****************************************
+ * Description: set new radius
+ * 
+ * Interface:
+ * 
+ * @param   r new radius of circle
+ *********************************************/

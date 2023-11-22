@@ -3,7 +3,8 @@
  */
 public class Student {
     // class fields
-    private static int lastId;
+    private static int lastId = 999;
+    
     // instance fields
     private int id;
     private String firstName;
@@ -11,6 +12,7 @@ public class Student {
     private char gender;
     private boolean active;
     private Subject major;
+    
     // first constructor, no arguments
     public Student(){ 
         id = nextId();
@@ -20,6 +22,7 @@ public class Student {
         gender = '?';
         active = false;
     }
+    
     // second constructor, four arguments
     public Student (String firstName, String lastName, char gender, boolean active){
         id = nextId();
@@ -41,6 +44,7 @@ public class Student {
         return ++lastId;
     }
 
+    // getters
     public int getId(){
         return id;
     }
@@ -69,12 +73,13 @@ public class Student {
         return major;
     }
 
+    // setters
     public void setLastId(int newLastId){
         lastId = newLastId;
     }
 
     // no setter for the student's id field
-    //     public void setId(int newId){
+    //     private void setId(int newId){
     //         id = newId;
     //     }
 
@@ -98,12 +103,18 @@ public class Student {
         major = newMajor;
     }
 
+    // other methods
+    @Override
     public String toString(){
         return id+" "+firstName+" "+lastName;
     }
 
+    
     public boolean equals(Student s){
-        System.out.println("equals");
-        return id == s.id;
+        //System.out.println("equals");
+        //return id == s.id;
+        boolean same = false;
+        same = this.lastName.equals(s.getLastName()) && this.firstName.equals(s.getFirstName());
+        return same;
     }
 }

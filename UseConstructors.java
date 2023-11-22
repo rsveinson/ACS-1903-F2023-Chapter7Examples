@@ -13,7 +13,7 @@ public class UseConstructors
         jill.setGender('F');
         jill.setActive(true);
         // now with the other constructor
-        Student sam = new Student("Samantha","Jones",'F',true);
+        Student sam = new Student("Samantha","Lee",'F',true);
         // display the students
         System.out.println(jill);
         System.out.println(sam);
