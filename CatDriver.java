@@ -13,6 +13,7 @@ public class CatDriver{
         Cat myCat = new Cat();
         Cat anotherCat = new Cat(2, "Rincewind");
         
+        
         // manipulate the cats
         //myCat.name = ("Mustrum");    // nope name is private
         myCat.setName("Mustrum");

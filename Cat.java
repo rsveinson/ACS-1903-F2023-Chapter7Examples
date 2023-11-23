@@ -76,11 +76,11 @@ public class Cat{
     public boolean equals(Cat c){
         // using the String implementation of
         // .equals
-        return this.name.equals(c.name);
+        //return this.name.equals(c.name);
         
         // we could
-        //boolean equal = this.name.equals(c.name) && this.age == c.age;
-        //return equal;
+        boolean equal = this.name.equals(c.name) && this.age == c.age;
+        return equal;
         
         // we could also set equal if their id are equal
         //return this.id == c.id;
@@ -89,6 +89,7 @@ public class Cat{
     }// end equals
     
     private int getNextID(){
+
         return nextID++;
     }// end get next id
     
