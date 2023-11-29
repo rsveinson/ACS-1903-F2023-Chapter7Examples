@@ -11,25 +11,25 @@ public class CatDemoDriver{
         Scanner scanner = new Scanner(System.in);
 
         
-        ArrayList<Cat> cats = new ArrayList<>();
-        ArrayList<Owner> owners = new ArrayList<>();
+        ArrayList<CatDemo> cats = new ArrayList<>();
+        ArrayList<OwnerDemo> owners = new ArrayList<>();
         
-        cats.add(new Cat(3, "Mittens"));
-        cats.add(new Cat(5, "Fido"));
+        cats.add(new CatDemo(3, "Mittens"));
+        cats.add(new CatDemo(5, "Fido"));
         
-        Cat newCat = new Cat(4, "Stibbins");
+        CatDemo newCat = new CatDemo(4, "Stibbins");
         cats.add(newCat);
 
         
-        Cat myCat = new Cat();
-        Cat otherCat = new Cat(2, "Rincewind");
+        CatDemo myCat = new CatDemo();
+        CatDemo otherCat = new CatDemo(2, "Rincewind");
         cats.add(otherCat);
         
         // print using toString()
         System.out.println("The list of cats:");
-        for(Cat c : cats){
+        for(CatDemo c : cats){
             // default method call is to toString()
-            System.out.println(c.getName());
+            System.out.println(c);
         }// end for cats
         System.out.println("End of the list of cats:\n");
 
@@ -79,9 +79,9 @@ public class CatDemoDriver{
         // make an owner or two
         
         System.out.println("\n------------ Some associations ---------------");
-        Owner owner1 = new Owner("Maurice");
-        Owner owner2 = new Owner();
-        Owner owner3 = new Owner("Angua");
+        OwnerDemo owner1 = new OwnerDemo("Maurice");
+        OwnerDemo owner2 = new OwnerDemo();
+        OwnerDemo owner3 = new OwnerDemo("Angua");
         
         System.out.println(owner1);
         System.out.println(owner2);
@@ -95,10 +95,10 @@ public class CatDemoDriver{
         adoptACat(owner2, myCat);
         System.out.println(owner2);  // note that Mal has 1 Cat
         System.out.println(myCat);      // note owner is now Maladict
-        System.out.println("My cat's owner: " + myCat.owner.getName());
+        System.out.println("My cat's owner: " + myCat.getOwner().getName());
         //System.out.println("My cat's owner: " + myCat.owner.name);
         
-        for(Cat c : cats){
+        for(CatDemo c : cats){
             adoptACat(owner2, c);
         }// end adopt a bunch of cats
         
@@ -106,29 +106,29 @@ public class CatDemoDriver{
         
         // when a cat is added it automatically sets the new owner
         
-        Owner lastOwner = new Owner("Sam Vimes");
+        OwnerDemo lastOwner = new OwnerDemo("Sam Vimes");
         // sam has 0 cats
          // print sam vime's toString()
         System.out.println(lastOwner.getName() + "'s toString():");
         System.out.println(lastOwner);
         
         // now lets add a cat or two
-        lastOwner.addCat(new Cat(3, "Hermes"));
-        lastOwner.addCat(new Cat(2, "Calaban"));
+        lastOwner.addCat(new CatDemo(3, "Hermes"));
+        lastOwner.addCat(new CatDemo(2, "Calaban"));
         System.out.println(lastOwner.getName() + "'s toString(): after adding some cats using the addCat() method");
         System.out.println(lastOwner);
         
         // new we see if the set owner feature in Owner.addCat() works
         System.out.println("\nNew cat's owners");
-        System.out.println(lastOwner.getACat(0).owner.getName());
-        System.out.println(lastOwner.getACat(1).owner.getName());
+        System.out.println(lastOwner.getACat(0).getOwner().getName());
+        System.out.println(lastOwner.getACat(1).getOwner().getName());
         
         
         System.out.println("\nend of program");
     }
     
     // static method to set the association between cat and owner
-    public static void adoptACat(Owner owner, Cat cat){
+    public static void adoptACat(OwnerDemo owner, CatDemo cat){
         owner.addCat(cat);
         cat.setOwner(owner);
     }

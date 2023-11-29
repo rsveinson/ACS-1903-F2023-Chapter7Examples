@@ -12,7 +12,7 @@ public class CatDemo{
     private String name;
     private int id;         // this will be a unique id nuber
 
-    private Owner owner;
+    private OwnerDemo owner;    // currently null
 
     // constructors
     public CatDemo(){
@@ -40,7 +40,7 @@ public class CatDemo{
         return this.id;
     }// end get id
 
-    public Owner getOwner(){
+    public OwnerDemo getOwner(){
         return this.owner;
     }// end get owner
 
@@ -54,7 +54,7 @@ public class CatDemo{
         name = n;
     }// end set name
 
-    public void setOwner(Owner owner){
+    public void setOwner(OwnerDemo owner){
         this.owner = owner;
     }// end set owner
 
@@ -71,6 +71,7 @@ public class CatDemo{
 
         st = this.getName() + ", " + this.getID() + ", " + this.getAge();
         st += ": " + this.getOwner();
+        System.out.println("owner" + this.getOwner());
         return st;
     }// end toString
 
