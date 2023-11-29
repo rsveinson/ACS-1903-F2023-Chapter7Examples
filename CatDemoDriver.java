@@ -62,7 +62,7 @@ public class CatDemoDriver{
         // String name = scanner.next();
         // myCat.setAge(age);
         // myCat.setName(name);
-        //System.out.println(myCat);
+        System.out.println(myCat);
         
         boolean sameCat;
         
@@ -95,12 +95,33 @@ public class CatDemoDriver{
         adoptACat(owner2, myCat);
         System.out.println(owner2);  // note that Mal has 1 Cat
         System.out.println(myCat);      // note owner is now Maladict
+        System.out.println("My cat's owner: " + myCat.owner.getName());
+        //System.out.println("My cat's owner: " + myCat.owner.name);
         
         for(Cat c : cats){
             adoptACat(owner2, c);
         }// end adopt a bunch of cats
         
         System.out.println(owner2);
+        
+        // when a cat is added it automatically sets the new owner
+        
+        Owner lastOwner = new Owner("Sam Vimes");
+        // sam has 0 cats
+         // print sam vime's toString()
+        System.out.println(lastOwner.getName() + "'s toString():");
+        System.out.println(lastOwner);
+        
+        // now lets add a cat or two
+        lastOwner.addCat(new Cat(3, "Hermes"));
+        lastOwner.addCat(new Cat(2, "Calaban"));
+        System.out.println(lastOwner.getName() + "'s toString(): after adding some cats using the addCat() method");
+        System.out.println(lastOwner);
+        
+        // new we see if the set owner feature in Owner.addCat() works
+        System.out.println("\nNew cat's owners");
+        System.out.println(lastOwner.getACat(0).owner.getName());
+        System.out.println(lastOwner.getACat(1).owner.getName());
         
         
         System.out.println("\nend of program");
