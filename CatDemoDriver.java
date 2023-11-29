@@ -45,7 +45,10 @@ public class CatDemoDriver{
         /* original examples of Cat class 
          * usages
          */
-        
+        /*
+        CatDemo myCat = new CatDemo();
+        CatDemo otherCat = new CatDemo(2, "Rincewind");
+         */
         //System.out.println(myCat);
         //System.out.println(otherCat);
         

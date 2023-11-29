@@ -71,7 +71,7 @@ public class CatDemo{
 
         st = this.getName() + ", " + this.getID() + ", " + this.getAge();
         st += ": " + this.getOwner();
-        System.out.println("owner" + this.getOwner());
+        //System.out.println("owner" + this.getOwner());
         return st;
     }// end toString
 
