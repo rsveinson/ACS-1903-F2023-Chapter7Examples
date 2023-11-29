@@ -43,6 +43,7 @@ public class Subject
     // add a student to those majoring in this area
     public void addMajor(Student newMajor){
         majors.add(newMajor);
+        
     }
     // toString()
     public String toString(){
